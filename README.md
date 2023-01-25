@@ -15,7 +15,7 @@ un gran título el de arriba
 
 ## Ejemplo de listas de tareas (tasks)
 
-- [] Aprender HTML
-- [] Aprender CSS
-- [] Aprender Javascript
+- [ ] Aprender HTML
+- [ ] Aprender CSS
+- [ ] Aprender Javascript
 - [x] Aprender MySQL
