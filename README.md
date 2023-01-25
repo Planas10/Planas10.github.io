@@ -7,10 +7,15 @@ mondongo.markdown
 un gran título el de arriba
 
 
-dos **asteriscos** significa BOLD.
+- dos **asteriscos** significa BOLD.
+- Un *asterisco* significa ITALIC.
+- Un _guión bajo_ significa también ITALIC.
+- Para ***BOLD ITALIC*** tres asteriscos.
+- guión seguido de espacio para hacer un item de lista
 
-Un *asterisco* significa ITALIC.
+## Ejemplo de listas de tareas (tasks)
 
-Un _guión bajo_ significa también ITALIC.
-
-Para ***BOLD ITALIC*** tres asteriscos.
+- [] Aprender HTML
+- [] Aprender CSS
+- [] Aprender Javascript
+- [x] Aprender MySQL
