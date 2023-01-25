@@ -8,6 +8,9 @@ un gran título el de arriba
 
 
 dos **asteriscos** significa BOLD.
+
 Un *asterisco* significa ITALIC.
+
 Un _guión bajo_ significa también ITALIC.
+
 Para ***BOLD ITALIC*** tres asteriscos.
