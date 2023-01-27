@@ -4,7 +4,10 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+
 		<link rel="stylesheet" href="base.css" />
+		<link rel="stylesheet" href="game.css" />
+
 		<script>
 			function game (data){
 				console.log(data.rooms[0].name);
@@ -27,8 +30,12 @@
 		</header>
 		<main>
 			<article>
-				<h2>Articulo</h2>
-				<p>Ejemplo de contenido</p>
+				<h2>Juegaco</h2>
+				<form>
+					<div id="terminal"></div>
+					<input type="text" id="commands" />
+					<input type="submit" value="Acción" />
+				</form>
 			</article>
 			<aside>
 				<h2>Lateral</h2>
