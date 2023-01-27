@@ -7,7 +7,7 @@
 		<link rel="stylesheet" href="base.css" />
 		<script>
 			function game (data){
-				console.log(game.rooms[0].name);
+				console.log(data.rooms[0].name);
 			}
 			fetch("https://planas10.github.io/game.json").then(response => response.json()).then(data => game(data));
 		</script>

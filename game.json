@@ -1,11 +1,12 @@
 
 {
 	"rooms":[
-		{"id":"parking",
-		"name":"parking de ENTI",
-		"description":"El parking que no puedes usar",
-		"items":["piedra","bicicleta"],
-		"doors":["principal","salida"]
+		{
+			"id":"parking",
+			"name":"parking de ENTI",
+			"description":"El parking que no puedes usar",
+			"items":["piedra","bicicleta"],
+			"doors":["principal","salida"]
 		}
 	],
 	"items":[
