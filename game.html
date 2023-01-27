@@ -9,9 +9,17 @@
 		<link rel="stylesheet" href="game.css" />
 
 		<script>
-			function game (data){
+			
+			let game_data;
+
+			function game (data)
+			{
+				game_data = data
+
+				document.getElementById("terminal").innerHTML = "<p><strong>¡Bienvenidos a ENTIerrame!</strong></p>"
 				console.log(data.rooms[0].name);
 			}
+
 			fetch("https://planas10.github.io/game.json").then(response => response.json()).then(data => game(data));
 		</script>
 	</head>
