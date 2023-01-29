@@ -60,7 +60,15 @@
 		<script>
 			document.getElementById("footer-year").innerHTML = new Date().getFullYear();
 
-			document.getElementById("game-form").addEventListener("submit");
+			function splitString(event) {
+
+				event.preventDefault();
+
+				let command = document.getElementById("commands").value;
+				let action = command.split(" ");
+
+
+			}
 		</script>
 	</footer>
 </body>
