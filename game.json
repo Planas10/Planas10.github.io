@@ -96,7 +96,7 @@
 			"name": "Videojuego",
 			"description": "Videojuego de la epoca de la castaña pero que todo el mundo conoce.",
 			"pickable": "true"
-		}
+		},
 		{
 			"id": "detector",
 			"name": "Detector de temperatura improvisado",
