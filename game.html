@@ -1,76 +1,79 @@
 <html>
-<head>
-	<title>Pagina de la asignatura de lenguaje de marcas</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-
-	<link rel="stylesheet" href="base.css" />
-	<link rel="stylesheet" href="game.css" />
-
-	<script>
-
-		let game_data;
-
-		let current_room = 0;
-		let items_picked = [];
-
-		function game(data) {
-			game_data = data
-
-			document.getElementById("terminal").innerHTML = "<p><strong>¡Bienvenidos a ENTIerrame!</strong>El juego de terror definitivo.</p>"
-
-			document.getElementById("terminal").innerHTML += "<p>Te encuentras en" + game_data.rooms[current_room].name + ". ¿Que quieres hacer?"
-
-			console.log(data.rooms[0].name);
-		}
-
-		fetch("https://planas10.github.io/game.json").then(response => response.json()).then(data => game(data));
-	</script>
-</head>
-<body>
-	<header>
-		<h1>Marc Planas, pagina de ENTI (M04UF1)</h1>
-		<nav>
-			<ul>
-				<li id="menu-presentaTión"><a href="index.html">Presentación</a></li>
-				<li id="menu-hobbies"><a href="hobbies.html">hobbies</a></li>
-				<li id="menu-contact"><a href="contact.html">contacto</a></li>
-				<li id="menu-cv"><a href="cv.html">CV</a></li>
-
-			</ul>
-		</nav>
-	</header>
-	<main>
-		<article>
-			<h2>Juegaco</h2>
-			<form id="game-form">
-				<div id="terminal"></div>
-				<input type="text" id="commands" />
-				<input type="submit" value="Acción" />
-			</form>
-		</article>
-		<aside>
-			<h2>Lateral</h2>
-			<p>Ejemplo de menú lateral</p>
-		</aside>
-	</main>
-	<footer>
-		<p id="kopyderecha">Kopyderecha(K) <span id="footer-year">2022</span> - Marc Planas Mas</p>
+	<head>
+		<title>Pagina de la asignatura de lenguaje de marcas</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+	
+		<link rel="stylesheet" href="base.css" />
+		<link rel="stylesheet" href="game.css" />
+	
 		<script>
-			document.getElementById("footer-year").innerHTML = new Date().getFullYear();
-
-			function splitString(event) {
-
-				event.preventDefault();
-
-				let command = document.getElementById("commands").value;
-				let action = command.split(" ");
-
-
-
+	
+			let game_data;
+	
+			let current_room = 0;
+			let items_picked = [];
+	
+			function game(data) {
+				game_data = data
+	
+				document.getElementById("terminal").innerHTML = "<p><strong>¡Bienvenidos a ENTIerrame!</strong>El juego de terror definitivo.</p>"
+	
+				document.getElementById("terminal").innerHTML += "<p>Te encuentras en" + game_data.rooms[current_room].name + ". ¿Que quieres hacer?"
+	
+				console.log(data.rooms[0].name);
 			}
+	
+			fetch("https://planas10.github.io/game.json").then(response => response.json()).then(data => game(data));
 		</script>
-	</footer>
-</body>
+	</head>
+	<body>
+		<header>
+			<h1>Marc Planas, pagina de ENTI (M04UF1)</h1>
+			<nav>
+				<ul>
+					<li id="menu-presentaTión"><a href="index.html">Presentación</a></li>
+					<li id="menu-hobbies"><a href="hobbies.html">hobbies</a></li>
+					<li id="menu-contact"><a href="contact.html">contacto</a></li>
+					<li id="menu-cv"><a href="cv.html">CV</a></li>
+	
+				</ul>
+			</nav>
+		</header>
+		<main>
+			<article>
+				<h2>Juegaco</h2>
+				<form id="game-form">
+					<div id="terminal"></div>
+					<input type="text" id="commands" />
+					<input type="submit" value="Acción" />
+				</form>
+			</article>
+			<aside>
+				<h2>Lateral</h2>
+				<p>Ejemplo de menú lateral</p>
+			</aside>
+		</main>
+		<footer>
+			<p id="kopyderecha">Kopyderecha(K) <span id="footer-year">2022</span> - Marc Planas Mas</p>
+			<script>
+				document.getElementById("footer-year").innerHTML = new Date().getFullYear();
+	
+				function processString(event) {
+	
+					event.preventDefault();
+	
+					let command = document.getElementById("commands").value;
+					let action = command.split(" ");
+
+					for (let i in action){
+						console.log(action[i]);
+					}
+				}
+				document.getElementById("game-form").addEventListener("submit", processString());
+
+			</script>
+		</footer>
+	</body>
 </html>
