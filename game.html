@@ -59,8 +59,8 @@
 			<p id="kopyderecha">Kopyderecha(K) <span id="footer-year">2022</span> - Marc Planas Mas</p>
 			<script>
 				document.getElementById("footer-year").innerHTML = new Date().getFullYear();
-	
-				function processString(event) {
+
+				document.getElementById("game-form").addEventListener("submit", function processString(event) {
 	
 					event.preventDefault();
 	
@@ -70,8 +70,7 @@
 					for (let i in action){
 						console.log(action[i]);
 					}
-				}
-				document.getElementById("game-form").addEventListener("submit", processString());
+				});
 
 			</script>
 		</footer>
