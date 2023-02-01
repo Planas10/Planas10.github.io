@@ -27,16 +27,29 @@
 				console.log(data.rooms[0].name);
 			}
 
-			function terminal_out (info){
-				document.getElementById("terminal").innerHTML += info;
+			function terminal_out (info)
+			{
+				let terminal = document.getElementById("terminal");
+			
+				terminal.innerHTML += info;
+			
+				terminal.scrollTop = terminal.scrollHeight;
 			}
-
 
 			function parseCommand(command){
 				console.log("El comando ", command);
 				switch (command){
 					case "ver":
 						terminal_out("<p>"+game_data.rooms[current_room].description+"</p>");
+						break;
+
+					case "ir":
+						let doors = "";
+						let doors_num = game_data.rooms[current_room].doors.length;
+						for (let i = 0; i < doors_num; i++){
+							doors += game_data.rooms[current_room].doors[i]+" ";
+						}
+						terminal_out("<p>Puedes ir a: "+doors+"</p>");
 						break;
 
 					default:
