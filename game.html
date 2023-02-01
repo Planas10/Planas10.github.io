@@ -24,8 +24,18 @@
 	
 				console.log(data.rooms[0].name);
 			}
+
+			function readAction(){
+					let command = document.getElementById("commands").value;
+					let action = command.split(" ");
+
+					for (let i in action){
+						console.log(action[i]);
+					}
+			}
 	
 			fetch("https://planas10.github.io/game.json").then(response => response.json()).then(data => game(data));
+
 		</script>
 	</head>
 	<body>
@@ -47,7 +57,7 @@
 				<form id="game-form">
 					<div id="terminal"></div>
 					<input type="text" id="commands" />
-					<input type="submit" value="Acción" />
+					<input type="submit" value="Acción" onclick="readAction(); return false;" />
 				</form>
 			</article>
 			<aside>
@@ -59,18 +69,6 @@
 			<p id="kopyderecha">Kopyderecha(K) <span id="footer-year">2022</span> - Marc Planas Mas</p>
 			<script>
 				document.getElementById("footer-year").innerHTML = new Date().getFullYear();
-
-				document.getElementById("game-form").addEventListener("submit", function processString(event) {
-	
-					event.preventDefault();
-	
-					let command = document.getElementById("commands").value;
-					let action = command.split(" ");
-
-					for (let i in action){
-						console.log(action[i]);
-					}
-				});
 
 			</script>
 		</footer>
