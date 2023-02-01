@@ -57,9 +57,67 @@
 				}
 			}
 
-			function parseInstruction(instruction){
-				console.log("La instrucción ", instruction);
+			function getRoomNumber (room)
+			{
+				for (let i = 0; i < game_data.room.length; i++)
+				{
+					if (game_data.rooms[i].id == room)
+					{
+						return -1;
+					}
+				}
 			}
+
+			function getDoorNumber (room)
+			{
+				for (let i = 0; i < game_data.doors.length; i++)
+				{
+					if (game_data.doors[i].id == door)
+					{
+						return -1;
+					}
+				}
+			}
+
+
+			function parseInstruction (instruction)
+			{
+			
+				console.log("La instrucción ", instruction);
+			
+				switch (instruction[0]){
+					case "ver":
+			
+						break;
+			
+					case "ir":
+						
+						let door_num = getDoorNumber(instruction[1]);
+						if (door_num < 0){
+							console.log("Puerta erronea");
+							return;
+						}
+			
+						let room_num = getRoomNumber(game_data.doors[door_num].rooms[0]);
+						if (room_num == current_room){
+							current_room = getRoomNumber(game_data.doors[door_num].rooms[1]);
+						}
+						else{
+							current_room = room_num;
+						}
+			
+						break;
+			
+					case "coger":
+			
+						break;
+			
+			
+					default:
+						terminal_out("<p><strong>Error</strong>: "+instruction[0]+" commando no encontrado</p>");
+				}
+			}
+
 
 
 			function readAction()
