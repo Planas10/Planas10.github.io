@@ -2,62 +2,53 @@
 {
 	"rooms":[
 		{
-			{
-				"id": "parking",
-				"name": "parking de ENTI",
-				"description": "El parking que no puedes usar.",
-				"items": [ "piedra", "bicicleta" ],
-				"doors": [ "principal", "salida" ]
-			},
-
-			{
-				"id": "entrada",
-				"name": "Entrada de ENTI",
-				"description": "Hay un detector de metales que nadie usa pero da pereza quitarlo.",
-				"items": [ "entrada", "detector" ],
-				"doors": [ "parking", "pasillo" ]
-			},
-			{
-				"id": "pasillo",
-				"name": "pasillo",
-				"description": "",
-				"items": [ "fuente" ],
-				"doors": [ "aula01", "aula02", "aula03", "secretaria", "entrada" ]
-			},
-
-			{
-				"id": "secretaria",
-				"name": "secretaria de ENTI",
-				"description": "Nadie sabe que hacen ahy dentro, bien podrian estar invocando a satán y no nos dariamos cuenta.",
-				"items": [ "videojuego" ],
-				"doors": [ "pasillo", "entrada" ]
-			},
-
-			{
-				"id": "aula01",
-				"name": "aula01",
-				"description": "El aula 01, Ni idea de que hacen ahi dentro, pero siempre hay alguien.",
-				"items": [ "ordenador", "papelera" ],
-				"doors": [ "pasillo" ]
-			},
-
-			{
-				"id": "aula02",
-				"name": "aula02",
-				"description": "El aula 02, donde la conexion nunca funciona y los pc se petan al abrir el UNREAL.",
-				"items": [ "ordenador", "ordenador2", "papelera" ],
-				"doors": [ "pasillo" ]
-			},
-
-			{
-				"id": "aula03",
-				"name": "aula03",
-				"description": "No te metas con los alumnos de ciberseguridad que hacen clase ahi, creen que crearse un linked-in es mas seguro que poner su nombre en discord.",
-				"items": [ "ordenador", "papelera" ],
-				"doors": [ "pasillo" ]
-			}
-
-
+			"id": "parking",
+			"name": "parking de ENTI",
+			"description": "El parking que no puedes usar.",
+			"items": [ "piedra", "bicicleta" ],
+			"doors": [ "principal", "salida" ]
+		},
+		{
+			"id": "entrada",
+			"name": "Entrada de ENTI",
+			"description": "Hay un detector de metales que nadie usa pero da pereza quitarlo.",
+			"items": [ "entrada", "detector" ],
+			"doors": [ "parking", "pasillo" ]
+		},
+		{
+			"id": "pasillo",
+			"name": "pasillo",
+			"description": "",
+			"items": [ "fuente" ],
+			"doors": [ "aula01", "aula02", "aula03", "secretaria", "entrada" ]
+		},
+		{
+			"id": "secretaria",
+			"name": "secretaria de ENTI",
+			"description": "Nadie sabe que hacen ahy dentro, bien podrian estar invocando a satán y no nos dariamos cuenta.",
+			"items": [ "videojuego" ],
+			"doors": [ "pasillo", "entrada" ]
+		},
+		{
+			"id": "aula01",
+			"name": "aula01",
+			"description": "El aula 01, Ni idea de que hacen ahi dentro, pero siempre hay alguien.",
+			"items": [ "ordenador", "papelera" ],
+			"doors": [ "pasillo" ]
+		},
+		{
+			"id": "aula02",
+			"name": "aula02",
+			"description": "El aula 02, donde la conexion nunca funciona y los pc se petan al abrir el UNREAL.",
+			"items": [ "ordenador", "ordenador2", "papelera" ],
+			"doors": [ "pasillo" ]
+		},
+		{
+			"id": "aula03",
+			"name": "aula03",
+			"description": "No te metas con los alumnos de ciberseguridad que hacen clase ahi, creen que crearse un linked-in es mas seguro que poner su nombre en discord.",
+			"items": [ "ordenador", "papelera" ],
+			"doors": [ "pasillo" ]
 		}
 	],
 	"items": [
