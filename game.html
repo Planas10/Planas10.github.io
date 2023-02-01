@@ -12,7 +12,7 @@
 	
 			let game_data;
 	
-			let current_room = 0;
+			let current_room = 1;
 			let items_picked = [];
 	
 			function game(data) {
@@ -20,7 +20,7 @@
 	
 				document.getElementById("terminal").innerHTML = "<p><strong>¡Bienvenidos a ENTIerrame!</strong>El juego de terror definitivo.</p>"
 	
-				document.getElementById("terminal").innerHTML += "<p>Te encuentras en" + game_data.rooms[current_room].name + ". ¿Que quieres hacer?"
+				document.getElementById("terminal").innerHTML += "<p>Te encuentras en " +game_data.rooms[current_room].name+ ". ¿Que quieres hacer?"
 	
 				console.log(data.rooms[0].name);
 			}
@@ -30,7 +30,9 @@
 					let action = command.split(" ");
 
 					console.log(action[i]);
+					return action;
 			}
+
 	
 			fetch("https://planas10.github.io/game.json").then(response => response.json()).then(data => game(data));
 
