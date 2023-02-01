@@ -29,9 +29,7 @@
 					let command = document.getElementById("commands").value;
 					let action = command.split(" ");
 
-					for (let i in action){
-						console.log(action[i]);
-					}
+					console.log(action[i]);
 			}
 	
 			fetch("https://planas10.github.io/game.json").then(response => response.json()).then(data => game(data));
