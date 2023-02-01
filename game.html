@@ -12,7 +12,7 @@
 	
 			let game_data;
 	
-			let current_room = 1;
+			let current_room = 0;
 			let items_picked = [];
 	
 			function game(data) {
@@ -20,7 +20,7 @@
 	
 				document.getElementById("terminal").innerHTML = "<p><strong>¡Bienvenidos a ENTIerrame!</strong>El juego de terror definitivo.</p>"
 	
-				document.getElementById("terminal").innerHTML += "<p>Te encuentras en " +game_data.rooms[current_room].name+ ". ¿Que quieres hacer?"
+				document.getElementById("terminal").innerHTML += "<p>Te encuentras en " +game_data.rooms[current_room].name+ ". ¿Que quieres hacer?</p>"
 	
 				console.log(data.rooms[0].name);
 			}
