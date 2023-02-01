@@ -26,21 +26,26 @@
 			}
 
 			function parseCommand(command){
-
+				console.log("El comando ", command);
+				if (command == "ver"){
+					console.log("Veo "+game_data.rooms[current_room.items]);
+				}
 			}
 
 
 			function parseInstruction(instruction){
-
+				console.log("La instrucción ", instruction);
 			}
 
 
 			function readAction()
 			{
 					let instruction = document.getElementById("commands").value;
-					let action = instruction.LIMPIAR_ESPACIOS().split(" ");
+					let instruction_trim = instruction.trim();
 
-					if (data.lenght == 0){
+					let action = instruction_trim.split(" ");
+
+					if (data.lenght == 0 || instruction_trim == ""){
 						document.getElementById("terminal").innerHTML += "<p><strong>Error</strong>: escribe un comando valido</p>";
 						return;
 					}
