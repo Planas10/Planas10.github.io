@@ -25,13 +25,22 @@
 				console.log(data.rooms[0].name);
 			}
 
-			function parseCommand(command){
-				console.log("El comando ", command);
-				if (command == "ver"){
-					console.log("Veo "+game_data.rooms[current_room].items.name);
-				}
+			function terminal_out (info){
+				document.getElementById("terminal").innerHTML += info;
 			}
 
+
+			function parseCommand(command){
+				console.log("El comando ", command);
+				switch (command){
+					case "ver":
+						terminal_out(game_data.rooms[current_room].description);
+						break;
+
+					default:
+						terminal_out("<p><strong>Error</strong>: "+command+" commando no encontrado</p>");
+				}
+			}
 
 			function parseInstruction(instruction){
 				console.log("La instrucción ", instruction);
@@ -43,7 +52,7 @@
 					let instruction = document.getElementById("commands").value;
 					let instruction_trim = instruction.trim();
 
-					let action = instruction_trim.split(" ");
+					let data = instruction_trim.split(" ");
 
 					if (data.lenght == 0 || instruction_trim == ""){
 						document.getElementById("terminal").innerHTML += "<p><strong>Error</strong>: escribe un comando valido</p>";
