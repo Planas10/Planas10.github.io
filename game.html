@@ -38,7 +38,7 @@
 			function readAction()
 			{
 					let instruction = document.getElementById("commands").value;
-					let action = instruction.split(" ");
+					let action = instruction.LIMPIAR_ESPACIOS().split(" ");
 
 					if (data.lenght == 0){
 						document.getElementById("terminal").innerHTML += "<p><strong>Error</strong>: escribe un comando valido</p>";
