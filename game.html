@@ -52,18 +52,18 @@
 					let instruction = document.getElementById("commands").value;
 					let instruction_trim = instruction.trim();
 
-					let data = instruction_trim.split(" ");
+					let action = instruction_trim.split(" ");
 
-					if (data.lenght == 0 || instruction_trim == ""){
+					if (action.lenght == 0 || instruction_trim == ""){
 						document.getElementById("terminal").innerHTML += "<p><strong>Error</strong>: escribe un comando valido</p>";
 						return;
 					}
 
-					if (data.lenght == 1){
-						parseCommand(data[0]);
+					if (action.lenght == 1){
+						parseCommand(action[0]);
 					}
 					else{
-						parseInstruction(data);
+						parseInstruction(action);
 					}
 			}
 
