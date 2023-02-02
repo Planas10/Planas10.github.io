@@ -14,8 +14,11 @@
 
 			let game_data;
 
-			let current_room;
+			let inventory = "";
+
+			let current_room = 0;
 			let items_picked = [];
+
 
 			function game (data)
 			{
@@ -26,6 +29,8 @@
 
 				console.log(data.rooms[0].name);
 			}
+
+			console.log(current_room);
 
 			function terminal_out (info)
 			{
@@ -56,6 +61,25 @@
 							doors += game_data.rooms[current_room].doors[i]+", ";
 						}
 						terminal_out("<p>Puedes ir a: "+doors+"</p>");
+						break;
+
+					case "coger":
+
+						let pickable_items = "";
+						let room_items = game_data.rooms[current_room].items;
+						for	(let i = 0; i < room_items.length; i++){
+							if (game_data.items[i].pickable == true){
+								pickable_items += i+",";
+							}
+							
+						}
+						terminal_out("<p>Puedes coger: "+pickable_items);
+						break;
+
+						case "inventory":
+						
+							terminal_out("<p>Inventario: "+inventory);
+						
 						break;
 
 					default:
@@ -105,24 +129,24 @@
 
 				switch (instruction[0]){
 					case "ver":
-						let item_num = getItemNumber(instruction[1]);
-						if (item_num < 0){
+						let item_num_see = getItemNumber(instruction[1]);
+						if (item_num_see < 0){
 							return;
 						}
 						else{
-							terminal_out(game_data.items[item_num].description);
+							terminal_out(game_data.items[item_num_see].description);
 						}
 
 						break;
 
 					case "ir":
 						let door_num = getDoorNumber(instruction[1]);
+						let room_num = getRoomNumber(game_data.doors[door_num].rooms);
 						if (door_num < 0){;
 							console.log("Puerta erronea");
 							return;
 						}
 
-						let room_num = getRoomNumber(game_data.doors[door_num].rooms[0]);
 						if (room_num == current_room){
 							current_room = getRoomNumber(game_data.doors[door_num].rooms[1]);
 						}
@@ -132,6 +156,12 @@
 						break;
 
 					case "coger":
+
+						let item_num_pick = getItemNumber(instruction[1]);
+						if (game_data.rooms[current_room].item_num_pick.pickable == true){
+							game_data.rooms[current_room].item_num_pick.pickable = false;
+							inventory += item_num_pick+", ";
+						}
 
 						break;
 
