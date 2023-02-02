@@ -4,35 +4,35 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-	
+
 		<link rel="stylesheet" href="base.css" />
 		<link rel="stylesheet" href="game.css" />
-	
+
 		<script>
-			
+
 			fetch("https://planas10.github.io/game.json").then(response => response.json()).then(data => game(data));
-	
+
 			let game_data;
-	
-			let current_room = 0;
+
+			let current_room;
 			let items_picked = [];
-	
+
 			function game (data)
 			{
 				game_data = data
-	
+
 				document.getElementById("terminal").innerHTML = "<p><strong>¡Bienvenidos a ENTIerrame!</strong>El juego de terror definitivo.</p>";
 				document.getElementById("terminal").innerHTML += "<p>Te encuentras en "+game_data.rooms[current_room].name+". ¿Qué quieres hacer?</p>";
-	
+
 				console.log(data.rooms[0].name);
 			}
 
 			function terminal_out (info)
 			{
 				let terminal = document.getElementById("terminal");
-			
+
 				terminal.innerHTML += info;
-			
+
 				terminal.scrollTop = terminal.scrollHeight;
 			}
 
@@ -40,6 +40,12 @@
 				console.log("El comando ", command);
 				switch (command){
 					case "ver":
+						let items = "";
+						let items_num = game_data.rooms[current_room].items.length;
+						for (let i = 0; i < items_num; i++){
+							items += game_data.rooms[current_room].items[i]+", ";
+						}
+						terminal_out("<p>Puedes ver: "+items);
 						terminal_out("<p>"+game_data.rooms[current_room].description+"</p>");
 						break;
 
@@ -47,7 +53,7 @@
 						let doors = "";
 						let doors_num = game_data.rooms[current_room].doors.length;
 						for (let i = 0; i < doors_num; i++){
-							doors += game_data.rooms[current_room].doors[i]+" ";
+							doors += game_data.rooms[current_room].doors[i]+", ";
 						}
 						terminal_out("<p>Puedes ir a: "+doors+"</p>");
 						break;
@@ -59,11 +65,11 @@
 
 			function getRoomNumber (room)
 			{
-				for (let i = 0; i < game_data.room.length; i++)
+				for (let i = 0; i < game_data.rooms.length; i++)
 				{
 					if (game_data.rooms[i].id == room)
 					{
-						return -1;
+						return i;
 					}
 				}
 			}
@@ -72,9 +78,21 @@
 			{
 				for (let i = 0; i < game_data.doors.length; i++)
 				{
+					console.log(door);
 					if (game_data.doors[i].id == door)
 					{
-						return -1;
+						return i;
+					}
+				}
+			}
+
+			function getItemNumber(item){
+				for (let i = 0; i < game_data.items.length; i++)
+				{
+					console.log(item);
+					if (game_data.items[i].id == item)
+					{
+						return i;
 					}
 				}
 			}
@@ -82,22 +100,28 @@
 
 			function parseInstruction (instruction)
 			{
-			
+
 				console.log("La instrucción ", instruction);
-			
+
 				switch (instruction[0]){
 					case "ver":
-			
+						let item_num = getItemNumber(instruction[1]);
+						if (item_num < 0){
+							return;
+						}
+						else{
+							terminal_out(game_data.items[item_num].description);
+						}
+
 						break;
-			
+
 					case "ir":
-						
 						let door_num = getDoorNumber(instruction[1]);
-						if (door_num < 0){
+						if (door_num < 0){;
 							console.log("Puerta erronea");
 							return;
 						}
-			
+
 						let room_num = getRoomNumber(game_data.doors[door_num].rooms[0]);
 						if (room_num == current_room){
 							current_room = getRoomNumber(game_data.doors[door_num].rooms[1]);
@@ -105,14 +129,12 @@
 						else{
 							current_room = room_num;
 						}
-			
 						break;
-			
+
 					case "coger":
-			
+
 						break;
-			
-			
+
 					default:
 						terminal_out("<p><strong>Error</strong>: "+instruction[0]+" commando no encontrado</p>");
 				}
@@ -140,8 +162,6 @@
 					}
 			}
 
-	
-
 		</script>
 	</head>
 	<body>
@@ -153,7 +173,7 @@
 					<li id="menu-hobbies"><a href="hobbies.html">hobbies</a></li>
 					<li id="menu-contact"><a href="contact.html">contacto</a></li>
 					<li id="menu-cv"><a href="cv.html">CV</a></li>
-	
+
 				</ul>
 			</nav>
 		</header>
