@@ -129,7 +129,7 @@ function parseInstruction (instruction)
 		case "ir":
 			let door_num = getDoorNumber(instruction[1]);
 			let room_num = getRoomNumber(game_data.doors[door_num].rooms[0]);
-			for (int i = 0; i < game_data.rooms[current_room].doors.length; i++){
+			for (let i = 0; i < game_data.rooms[current_room].doors.length; i++){
 				if (door_num < 0 || door_num != game_data.doors[i]){;
 					console.log("Puerta erronea");
 					return;
