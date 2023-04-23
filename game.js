@@ -62,8 +62,8 @@ function parseCommand(command){
 				if (game_data.items[i].pickable == true){
 					pickable_items += i+",";
 				}
-				
 			}
+			terminal_out("Hasta aqui se llega al menos");
 			terminal_out("<p>Puedes coger: "+pickable_items);
 			break;
 
