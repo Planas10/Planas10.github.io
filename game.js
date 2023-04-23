@@ -131,11 +131,11 @@ function parseInstruction (instruction)
 			let room_num = getRoomNumber(game_data.doors[door_num].rooms[0]);
 			for (let i = 0; i < game_data.rooms[current_room].doors.length; i++){
 				if (door_num < 0 || door_num != game_data.doors[i]){;
-					console.log("Puerta erronea");
+					terminal_out("Puerta erronea");
 					return;
 				}
 				if (room_num < 0 || room_num != game_data.rooms[i]){
-					conaole.log("habitación erronea");
+					terminal_out("habitación erronea");
 					return;
 				}
 				if (room_num == current_room){
@@ -164,7 +164,7 @@ function parseInstruction (instruction)
 					console.log(game_data.items[item_num]);
 
 					if (game_data.items[item_num].pickable == false) {
-						terminalOut("<p>El objeto<strong> " + item + "</strong> no puede ser cogido</p>");
+						terminal_out("<p>El objeto<strong> " + item + "</strong> no puede ser cogido</p>");
 						return;
 					}
 					
@@ -174,7 +174,7 @@ function parseInstruction (instruction)
 						}
 					});
 					
-					terminalOut("<p>El objeto<strong> " + item + "</strong> ha sido añadido a tu inventario</p>");
+					terminal_out("<p>El objeto<strong> " + item + "</strong> ha sido añadido a tu inventario</p>");
 					return;
 				}
 			});
@@ -185,14 +185,13 @@ function parseInstruction (instruction)
 				let item_inventory_num = getItemNumber(instruction[1]);
 				
 				if (item_inventory_num < 0) {
-					terminalOut("<p>El objeto<strong> " + instruction[1] + "</strong> no se encuentra en tu inventario</p>");
+					terminal_out("<p>El objeto<strong> " + instruction[1] + "</strong> no se encuentra en tu inventario</p>");
 					return;
 				}
 				
 				let item_inventory_description = game_data.items[item_inventory_num].description;
 				
-				terminalOut("<p><strong>" + instruction[1] + ":</strong> " + item_inventory_description + "</p>");
-			
+				terminal_out("<p><strong>" + instruction[1] + ":</strong> " + item_inventory_description + "</p>");
 			break;
 
 		default:
