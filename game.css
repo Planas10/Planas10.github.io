@@ -1,6 +1,6 @@
 #terminal{
 	border:2px solid black;
 	min-width:400px;
-	height:200px;
+	height:300px;
 	overflow:scroll;
 }
