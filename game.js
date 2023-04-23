@@ -59,7 +59,7 @@ function parseCommand(command){
 			let pickable_items = "";
 			let room_items = game_data.rooms[current_room].items;
 			for	(let i = 0; i < room_items.length; i++){
-				if (game_data.items[i].pickable == true){
+				if (game_data.items[i].pickable == false){
 					pickable_items += i+",";
 				}
 			}
