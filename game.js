@@ -129,23 +129,23 @@ function parseInstruction (instruction)
 		case "ir":
 			let door_num = getDoorNumber(instruction[1]);
 			let room_num = getRoomNumber(game_data.doors[door_num].rooms[0]);
-			for (let i = 0; i < game_data.rooms[current_room].doors.length; i++){
-				if (door_num < 0 || door_num != game_data.doors[i]){;
-					terminal_out("Puerta erronea");
-					return;
-				}
-				if (room_num < 0 || room_num != game_data.rooms[i]){
-					terminal_out("habitación erronea");
-					return;
-				}
-				if (room_num == current_room){
-					current_room = getRoomNumber(game_data.doors[door_num].rooms[1]);
-				}
-				else{
-					current_room = room_num;
-				}
-				break;
+			//for (let i = 0; i < game_data.rooms[current_room].doors.length; i++){
+			if (door_num < 0 || door_num != game_data.doors[i]){;
+				terminal_out("Puerta erronea");
+				return;
 			}
+			if (room_num < 0 || room_num != game_data.rooms[i]){
+				terminal_out("habitación erronea");
+				return;
+			}
+			if (room_num == current_room){
+				current_room = getRoomNumber(game_data.doors[door_num].rooms[1]);
+			}
+			else{
+				current_room = room_num;
+			}
+			break;
+			//}
 
 		case "coger":
 
