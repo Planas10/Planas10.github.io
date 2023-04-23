@@ -91,7 +91,6 @@ function getDoorNumber (door)
 {
 	for (let i = 0; i < game_data.doors.length; i++)
 	{
-		console.log(door);
 		if (game_data.doors[i].id == door)
 		{
 			return i;
@@ -161,7 +160,7 @@ function parseInstruction (instruction)
 						return;
 					}
 					
-					item_num = findItemNumber(item);
+					item_num = getItemNumber(item);
 					console.log(game_data.items[item_num]);
 
 					if (game_data.items[item_num].pickable == false) {
@@ -183,7 +182,7 @@ function parseInstruction (instruction)
 			break;
 			case 'inventario':
 
-				let item_inventory_num = findItemNumber(instruction[1]);
+				let item_inventory_num = getItemNumber(instruction[1]);
 				
 				if (item_inventory_num < 0) {
 					terminalOut("<p>El objeto<strong> " + instruction[1] + "</strong> no se encuentra en tu inventario</p>");
