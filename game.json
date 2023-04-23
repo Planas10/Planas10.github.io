@@ -56,7 +56,7 @@
 			"id": "piedra",
 			"name": "Piedra",
 			"description": "Pedrusco más mugroso que el baño del insti",
-			"pickable": "true"
+			"pickable": "false"
 		},
 		{
 			"id": "bicicleta",

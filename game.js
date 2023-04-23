@@ -63,7 +63,7 @@ function parseCommand(command){
 					pickable_items += i+",";
 				}
 			}
-			terminal_out("Hasta aqui se llega al menos");
+			//terminal_out("Hasta aqui se llega al menos");
 			terminal_out("<p>Puedes coger: "+pickable_items);
 			break;
 
