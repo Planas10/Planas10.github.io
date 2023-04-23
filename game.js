@@ -152,20 +152,49 @@ function parseInstruction (instruction)
 
 		case "coger":
 
-			game_data.rooms[current_room].items.forEach(function(item){
-				if(item == instruction[1]){
-					items_picked.push(item);
-
+			game_data.rooms[current_room].items.forEach(function (item) {
+				if (item == instruction[1]) {
+				
 					let item_num = game_data.rooms[current_room].items.indexOf(item);
-					if(item_num < 0){
+					
+					if (item_num < 0) {
 						console.log("Error al borrar el item de la habitación");
 						return;
 					}
-					game_data.rooms[current_room].items.splice(item_num, 1);
+					
+					item_num = findItemNumber(item);
+					console.log(game_data.items[item_num]);
+
+					if (game_data.items[item_num].pickable == false) {
+						terminalOut("<p>El objeto<strong> " + item + "</strong> no puede ser cogido</p>");
+						return;
+					}
+					
+					game_data.rooms[current_room].items.forEach(item => {
+						if (item == instruction[1]) {
+							items_picked.push(game_data.rooms[current_room].items.splice(item_num, 1));
+						}
+					});
+					
+					terminalOut("<p>El objeto<strong> " + item + "</strong> ha sido añadido a tu inventario</p>");
 					return;
 				}
 			});
 
+			break;
+			case 'inventario':
+
+				let item_inventory_num = findItemNumber(instruction[1]);
+				
+				if (item_inventory_num < 0) {
+					terminalOut("<p>El objeto<strong> " + instruction[1] + "</strong> no se encuentra en tu inventario</p>");
+					return;
+				}
+				
+				let item_inventory_description = game_data.items[item_inventory_num].description;
+				
+				terminalOut("<p><strong>" + instruction[1] + ":</strong> " + item_inventory_description + "</p>");
+			
 			break;
 
 		default:
