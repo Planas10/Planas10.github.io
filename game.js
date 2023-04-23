@@ -130,11 +130,11 @@ function parseInstruction (instruction)
 			let door_num = getDoorNumber(instruction[1]);
 			let room_num = getRoomNumber(game_data.doors[door_num].rooms[0]);
 			//for (let i = 0; i < game_data.rooms[current_room].doors.length; i++){
-			if (door_num < 0 || door_num != game_data.doors[i]){;
+			if (door_num < 0){;
 				terminal_out("Puerta erronea");
 				return;
 			}
-			if (room_num < 0 || room_num != game_data.rooms[i]){
+			if (room_num < 0){
 				terminal_out("habitación erronea");
 				return;
 			}
