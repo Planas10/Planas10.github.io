@@ -17,8 +17,6 @@ function game (data)
 
 	document.getElementById("terminal").innerHTML = "<p><strong>¡Bienvenidos a ENTIerrame!</strong>El juego de terror definitivo.</p>";
 	document.getElementById("terminal").innerHTML += "<p>Te encuentras en "+game_data.rooms[current_room].name+". ¿Qué quieres hacer?</p>";
-
-	console.log(data.rooms[0].name);
 }
 
 console.log(current_room);
