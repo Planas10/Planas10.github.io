@@ -154,6 +154,7 @@ function parseInstruction (instruction)
 
 			game_data.rooms[current_room].items.forEach(function (item) {
 				if (item == instruction[1]) {
+					terminal_out(item);
 				
 					let item_num = game_data.rooms[current_room].items.indexOf(item);
 					
