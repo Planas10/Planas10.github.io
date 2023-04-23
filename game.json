@@ -56,49 +56,49 @@
 			"id": "piedra",
 			"name": "Piedra",
 			"description": "Pedrusco más mugroso que el baño del insti",
-			"pickable": "false"
+			"pickable": true
 		},
 		{
 			"id": "bicicleta",
 			"name": "Bicicleta",
 			"description": "Bicicleta de la Hello Kitty, tiene escrito 'Richard' en mayusculas en el manillar",
-			"pickable": "false"
+			"pickable": false
 		},
 		{
 			"id": "ordenador",
 			"name": "Ordenador en buen estado",
 			"description": "Parece en buen estado, pero esto no tira ni el unreal",
-			"pickable": "false"
+			"pickable": false
 		},
 		{
 			"id": "ordenador2",
 			"name": "Ordenador destrozado",
 			"description": "Parece ser que halguien trató de abrir unreal y chrome al mismo tiempo y la grafica explotó",
-			"pickable": "false"
+			"pickable": false
 		},
 		{
 			"id": "papelera",
 			"name": "Papelera roñosa",
 			"description": "La tipica papelera default que tienen todas las escuelas.",
-			"pickable": "false"
+			"pickable": true
 		},
 		{
 			"id": "fuente",
 			"name": "Fuente",
 			"description": "Agua fresquita... aunque sabe a cienaga de Shrek.",
-			"pickable": "false"
+			"pickable": false
 		},
 		{
 			"id": "videojuego",
 			"name": "Videojuego",
 			"description": "Videojuego de la epoca de la castaña pero que todo el mundo conoce.",
-			"pickable": "true"
+			"pickable": true
 		},
 		{
 			"id": "detector",
 			"name": "Detector de temperatura improvisado",
 			"description": "Nadie lo usaba, la gente pasaba por el lado.",
-			"pickable": "false"
+			"pickable": false
 		}
 	],
 	"doors": [
